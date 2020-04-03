@@ -93,8 +93,20 @@ let quotes = [
 ***/
 
 function getRandomQuote() {
-  let randomQuote = Math.floor(Math.random() * (quotes.length)); 
+  let randomQuote = Math.floor(Math.random() * quotes.length);
   return quotes[randomQuote];
+}
+
+// generates a random number, assigns it to a variable, then uses it to return a random object from the colors array
+function getRandomColor() {
+  let randomColor = Math.floor(Math.random() * colors.length);
+
+  return colors[randomColor];
+}
+
+// assigns a setInterval method to the variable so that the printQuote function will automatically run after 10 seconds
+function startTimer() {
+  timer = setInterval(printQuote, 10000);
 }
 
 /***
@@ -179,22 +191,25 @@ function clearTimer() {
 ***/
 
 function printQuote() {
-  // creates the currentQuoute variable and sets the value to the random object that is returned when the getRandomQuote function is called
+  // creates the currentQuute variable and sets the value to the random object that is returned when the getRandomQuote function is called
   // creates the currentColor variable and sets the value to the random object that is returned when the getRandomColor function is called
   // creates the html variable and uses the currentQuote variable along with key values to build a string
   let currentQuote = getRandomQuote();
   let currentColor = getRandomColor();
   let html = "<p class='quote'> " + currentQuote.quote + "</p>";
   html += "<p class='source'> " + currentQuote.source;
+    // tests to see if the author property is present in the currentQuote and if so, adds it to the string
+    if ("author" in currentQuote) {
+      html += "<span class='author'> " + currentQuote.author + "</span>";
+  }
   // tests to see if the citation property is present in the currentQuote and if so, adds it to the string
   if ("citation" in currentQuote) {
       html += "<span class='citation'> " + currentQuote.citation + "</span>";
   }
   // tests to see if the date property is present in the currentQuote and if so, adds it to the string
-  if ("date" in currentQuote) {
-      html += "<span class='year'> " + currentQuote.date + "</span>";
+  if ("year" in currentQuote) {
+      html += "<span class='year'> " + currentQuote.year + "</span>";
   }
-  html += "<span class='category'> " + currentQuote.category + "</span>";
 
   // writes the info from the html variable to the div with the quote-box id
   // uses the currentColor variable to change the background color
