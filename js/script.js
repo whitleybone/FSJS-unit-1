@@ -93,7 +93,8 @@ let quotes = [
 ***/
 
 function getRandomQuote() {
-  let randomNumber = Math.floor(math.random() * (quotes.length)); 
+  let randomQuote = Math.floor(math.random() * (quotes.length)); 
+  return quotes[randomQuote];
 }
 
 
@@ -101,7 +102,10 @@ function getRandomQuote() {
  * `printQuote` function
 ***/
 
+function printQuote() {
+console.log("click");
 
+}
 
 /***
  * click event listener for the print quote button
