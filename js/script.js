@@ -13,73 +13,73 @@ project 1 - A Random Quote Generator
 let quotes = [
   {
     quote: "Sometimes I'll start a sentence and I don't even know where it's going. I just hope I find it along the way.",
-    author: "Michael Scott",
+    source: "Michael Scott",
     citation: "Season 5",
     year: 2008
   },
   {
     quote: "I'm not supersition, I'm just a little sitious.",
-    author: "Michael Scott",
+    source: "Michael Scott",
     citation: "Season 4",
     year: 2007
   },
   {
     quote: "And I knew exactly what to do. But in a much more real sense, I had no idea what to do.",
-    author: "Michael Scott",
+    source: "Michael Scott",
     citation: "Season 5",
     year: 2008
   },
   {
     quote: "I wish there was a way to know you’re in the good old days, before you’ve actually left them.",
-    author: "Andy Bernard",
+    source: "Andy Bernard",
     citation: "Season 9",
     year: 2012
   },
   {
     quote: "I live by one rule: No office romances, no way. Very messy, inappropriate…no. But, I live by another rule: Just do it…Nike.",
-    author: "Michael Scott",
+    source: "Michael Scott",
     citation: "Season 1",
     year: 2005
   },
   {
     quote: "In the Schrute family, the youngest child raises the others. I’ve been raising children since I was a baby.",
-    author: "Dwight Schrute",
+    source: "Dwight Schrute",
     citation: "Season 7",
     year: 2010
   },
   {
     quote: "Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.",
-    author: "Michael Scott",
+    source: "Michael Scott",
     citation: "Season 2",
     year: 2005
   },
   {
     quote: "I feel God in this Chili’s tonight.",
-    author: "Pam Beesly",
+    source: "Pam Beesly",
     citation: "Season 2",
     year: 2005
   },
   {
     quote: "Did I stutter?",
-    author: "Stanley Hudson",
+    source: "Stanley Hudson",
     citation: "Season 4",
     year: 2007
   },
   {
     quote: "Ultimatums are key. Basically nobody does anything for me unless I threaten to kill myself.",
-    author: "Kelly Kapoor",
+    source: "Kelly Kapoor",
     citation: "Season 7",
     year: 2010
   },
   {
     quote: "There are always a million reasons not to do something.",
-    author: "Jan Levinson",
+    source: "Jan Levinson",
     citation: "Season 2",
     year: 2005
   },
   {
     quote: "I talk a lot, so I’ve learned to tune myself out.",
-    author: "Kelly Kapoor",
+    source: "Kelly Kapoor",
     citation: "Season 7",
     year: 2010
   }
@@ -199,9 +199,7 @@ function printQuote() {
   let html = "<p class='quote'> " + currentQuote.quote + "</p>";
   html += "<p class='source'> " + currentQuote.source;
     // tests to see if the author property is present in the currentQuote and if so, adds it to the string
-    if ("author" in currentQuote) {
-      html += "<span class='author'> " + currentQuote.author + "</span>";
-  }
+
   // tests to see if the citation property is present in the currentQuote and if so, adds it to the string
   if ("citation" in currentQuote) {
       html += "<span class='citation'> " + currentQuote.citation + "</span>";
