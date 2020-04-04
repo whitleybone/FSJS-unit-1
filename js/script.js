@@ -15,7 +15,8 @@ let quotes = [
     quote: "Sometimes I'll start a sentence and I don't even know where it's going. I just hope I find it along the way.",
     source: "Michael Scott",
     citation: "Season 5",
-    year: 2008
+    year: 2008,
+    tag: "#funny"
   },
   {
     quote: "I'm not supersition, I'm just a little sitious.",
@@ -33,7 +34,8 @@ let quotes = [
     quote: "I wish there was a way to know you’re in the good old days, before you’ve actually left them.",
     source: "Andy Bernard",
     citation: "Season 9",
-    year: 2012
+    year: 2012,
+    tag: "#sentimiental"
   },
   {
     quote: "I live by one rule: No office romances, no way. Very messy, inappropriate…no. But, I live by another rule: Just do it…Nike.",
@@ -57,13 +59,15 @@ let quotes = [
     quote: "I feel God in this Chili’s tonight.",
     source: "Pam Beesly",
     citation: "Season 2",
-    year: 2005
+    year: 2005,
+    tag: "#funny"
   },
   {
     quote: "Did I stutter?",
     source: "Stanley Hudson",
     citation: "Season 4",
-    year: 2007
+    year: 2007,
+    tag: "#funny"
   },
   {
     quote: "Ultimatums are key. Basically nobody does anything for me unless I threaten to kill myself.",
@@ -207,6 +211,11 @@ function printQuote() {
   // tests to see if the date property is present in the currentQuote and if so, adds it to the string
   if ("year" in currentQuote) {
       html += "<span class='year'> " + currentQuote.year + "</span>";
+  }
+
+    // tests to see if the date property is present in the currentQuote and if so, adds it to the string
+    if ("tag" in currentQuote) {
+      html += "<span class='tag'> " + currentQuote.tag + "</span>";
   }
 
   // writes the info from the html variable to the div with the quote-box id
